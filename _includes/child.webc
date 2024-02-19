@@ -1,0 +1,14 @@
+---
+layout: base.webc
+---
+<script webc:setup>
+	// some content processing, wrapping with <article> just for example
+	const processedContent = `<article>${content}</article>`; 
+
+	// for a.md the content should be <article><h1>A content</h1></article>
+	// for b.md the content should be <article><h1>B content</h1></article>
+	// But for b.md the content is actually <article><h1>A Content</h1></article>
+</script>
+<div class="some-wrapper">
+	<slot @raw="processedContent"></slot>
+</div>
